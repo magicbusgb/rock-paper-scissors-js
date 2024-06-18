@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // variable for the computer choice
+        let choice
+        // function to generate a random number between 0 and 98 for the commputer choice
+       
+        // paper --> between 0 and 32
+        // rock --> between 33 and 65
+        // scissors --> between 66 and 98
+        // if the random number is comprised between the range of the variable, that will be the computer choice
+
+        let randomnumber = Math.floor(Math.random()*100) -1;
+        function getComputerChoice (){
+            
+        if (randomnumber >= 0 && randomnumber <= 32) {
+            let computerchoice = "Paper";
+            
+            console.log(computerchoice);
+        } else if (randomnumber >= 33 && randomnumber <= 65) {
+            let computerchoice = "Rock";
+         
+             console.log(computerchoice);
+        } else {
+            let computerchoice = "Scissors";
+      
+             console.log (computerchoice)
+        }
+    }
+    getComputerChoice()
+
+        
+        // prompt the user to make a choice between rock paper scissors --> r /p /s
+        let userinput = prompt("Game Instructions: Type r for Rock, p for Paper and s for Scissors");
+        // if the inserted value is correct, create corresponding variable for user choice
+        function getHumanChoice() {
+        let humanchoice = (userinput === "p")? "Paper" :
+                          (userinput === "r")? "Rock" :
+                          (userinput === "s")? "Scissors": 
+                          alert ("Invalid Input");
+                          console.log (humanchoice)
+                          
+        }
+
+        getHumanChoice() 
+        // if the inserted value is not valid, throw alert
+    </script>
+</body>
+</html>
