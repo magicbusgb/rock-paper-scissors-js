@@ -1,116 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
-    <script>
+  <script>
 
-        // function to generate a random number between 0 and 98 for the computer choice
-       
-        // paper --> between 0 and 32
-        // rock --> between 33 and 65
-        // scissors --> between 66 and 98
-        // if the random number is comprised between the range of the variable, that will be the computer choice
-
-       
-        function getComputerChoice (){
-          let randomnumber = Math.floor(Math.random()*100) -1;
-          let computerchoice;
-        computerchoice = (randomnumber >= 0 && randomnumber <= 32)?  "Paper" :
-                             (randomnumber >= 33 && randomnumber <= 65)? "Rock" :
-                                                                         "Scissors";
-                            
-                            return computerchoice
+    // function to generate a random number between 0 and 98 for the computer choice
     
-        }
-   
+    // paper --> between 0 and 32
+    // rock --> between 33 and 65
+    // scissors --> between 66 and 98
+    // if the random number is comprised between the range of the variable, that will be the computer choice
 
-        // prompt the user to make a choice between rock paper scissors --> r /p /s
-        
-        // if the inserted value is correct, create corresponding variable for user choice
-       
-        function getHumanChoice() {
-        let userinput = prompt("Game Instructions: Type r for Rock, p for Paper and s for Scissors");
-        let humanchoice;
-        humanchoice = (userinput === "p")? "Paper" :
-                          (userinput === "r")? "Rock" :
-                          (userinput === "s")? "Scissors": 
+    function getComputerChoice (){
+      let randomnumber = Math.floor(Math.random()*100) -1;
+      let computerchoice;
+      computerchoice = (randomnumber >= 0 && randomnumber <= 32)?  "Paper" :
+                          (randomnumber >= 33 && randomnumber <= 65)? "Rock" :
+                                                                      "Scissors";
+                        
+                        return computerchoice
 
-                          "noinput";
-                          
-                          return humanchoice
-                          
-        }
+    }
+  
 
-       
-
-
-
-       // initialize player score
-        let humanscore = 0;
-
-       // initialize computer score
-        let computerscore = 0;
-
-       // create a variable containing the computer choice
-        let computerselection = getComputerChoice();
-
-        // create a variable containing the computer choice
-        let humanselection = getHumanChoice();
-
-
-        console.log ("Computer: "+ computerselection)
-        console.log ("Player: "+ humanselection)
-       // the function evaluates if the human choice or the computer choice is the winner. 
-       // if human choice is paper and computer choice is rock, human choice wins
-       // if human choice is scissors and computer choice is paper, human choice wins
-       // if human choice is rock and computer choice is scissors, human choice wins
-       // if human choice === computer choice, it's a draw
-       // else, computer wins
-       function playRound (humanselection, computerselection) {
-       if (humanselection === "Paper" && computerselection === "Rock") {
-         humanscore += 1;
-         console.log ("You win! Player Score:" + humanscore + " Computer Score: " + computerscore);
-       } else if (humanselection === "Scissors" && computerselection === "Paper"){
-         humanscore += 1;
-         console.log ("You win! Player Score:" + humanscore);
-
-       } else if (humanselection === "Rock" && computerselection === "Scissors"){
-         humanscore += 1;
-         console.log ("You win! Player Score:" + humanscore);
-
-       } else if (humanselection === computerselection ){
-         
-         console.log ("It's a draw! Player Score:" + humanscore);
-
-       } else {
-         computerscore +=1;
-         console.log ("You lose! Computer Score: " + computerscore)
-       }
-
-        }
-
-       function checkinput (humanselection) {
-        if (humanselection === "noinput") {
-          alert ("Invalid Input") 
-        } else playRound (humanselection, computerselection) 
-
-        }
+    // prompt the user to make a choice between rock paper scissors --> r /p /s
     
+    // if the inserted value is correct, create corresponding variable for user choice
+      
+    function getHumanChoice() {
+      let userinput = prompt("Game Instructions: Type r for Rock, p for Paper and s for Scissors");
+      let humanchoice;
+      humanchoice = (userinput === "p")? "Paper" :
+                      (userinput === "r")? "Rock" :
+                      (userinput === "s")? "Scissors": 
+
+                      "noinput";
+                      
+      return humanchoice
+    }
+
+    // initialize player score
+    let humanscore = 0;
+
+    // initialize computer score
+    let computerscore = 0;
+
+    // create a variable containing the computer choice
+    let computerselection 
+    // create a variable containing the computer choice
+    let humanselection //
+
+
+    // the function evaluates if the human choice or the computer choice is the winner. 
+    // if human choice is paper and computer choice is rock, human choice wins
+    // if human choice is scissors and computer choice is paper, human choice wins
+    // if human choice is rock and computer choice is scissors, human choice wins
+    // if human choice === computer choice, it's a draw
+    // else, computer wins
+    function playRound (humanselection, computerselection) {
+      computerselection = getComputerChoice()
+      // humanselection = getHumanChoice()
+
+      console.log ("Computer: "+ computerselection)
+      console.log ("Player: "+ humanselection)
+      if (humanselection === "Paper" && computerselection === "Rock") {
+        humanscore += 1;
+        console.log ("You win! Player Score: " + humanscore + " Computer Score: " + computerscore);
+      } else if (humanselection === "Scissors" && computerselection === "Paper"){
+        humanscore += 1;
+        console.log ("You win! Player Score: " + humanscore + " Computer Score: " + computerscore);
+
+      } else if (humanselection === "Rock" && computerselection === "Scissors"){
+        humanscore += 1;
+        console.log ("You win! Player Score: " + humanscore + " Computer Score: " + computerscore);
+
+      } else if (humanselection === computerselection ){
         
-        checkinput( humanselection);
-        
+        console.log ("It's a draw! Player Score: " + humanscore + " Computer Score: " + computerscore);
+
+      } else {
+        computerscore +=1;
+        console.log ("You lose! Player Score: " + humanscore + " Computer Score: " + computerscore)
+      }
+
+    }
+    // the function checks if the user input si valid or not. If it's not valid, it throws an alert, otehrwise it executes the  playRound function
+    function checkinput (humanselection) {
+      console.log (humanselection);
+      if (humanselection === "noinput") {
+        alert ("Invalid Input");
+    
+        return;
+      } else playRound (humanselection, computerselection) 
+
+    }
     // the function to play the game must do the same thing each time
     // ask the user to prompt input
     // generate computer choice
     // once the round is complete, repeat
-  
-
-  
-        
-    </script>
+    function playGame () {
+      humanselection = getHumanChoice();
+      checkinput( humanselection);
+      humanselection = getHumanChoice();
+      checkinput( humanselection);
+      humanselection = getHumanChoice();
+      checkinput( humanselection);
+      humanselection = getHumanChoice();
+      checkinput( humanselection);
+      humanselection = getHumanChoice();
+      checkinput( humanselection);
+      (humanscore > computerscore)?   console.log ("You win the game!"):
+      (humanscore === computerscore)? console.log ("The game is a draw!"): 
+                                      console.log ("You lose the game!");
+    }
+      
+    playGame ()
+  </script>
 </body>
 </html>
