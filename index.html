@@ -15,10 +15,10 @@
         // scissors --> between 66 and 98
         // if the random number is comprised between the range of the variable, that will be the computer choice
 
-        let randomnumber = Math.floor(Math.random()*100) -1;
-        let computerchoice
+       
         function getComputerChoice (){
-
+          let randomnumber = Math.floor(Math.random()*100) -1;
+          let computerchoice;
         computerchoice = (randomnumber >= 0 && randomnumber <= 32)?  "Paper" :
                              (randomnumber >= 33 && randomnumber <= 65)? "Rock" :
                                                                          "Scissors";
@@ -26,14 +26,15 @@
                             return computerchoice
     
         }
-    getComputerChoice()
+   
 
         // prompt the user to make a choice between rock paper scissors --> r /p /s
-        let userinput = prompt("Game Instructions: Type r for Rock, p for Paper and s for Scissors");
+        
         // if the inserted value is correct, create corresponding variable for user choice
-        let humanchoice
+       
         function getHumanChoice() {
-
+        let userinput = prompt("Game Instructions: Type r for Rock, p for Paper and s for Scissors");
+        let humanchoice;
         humanchoice = (userinput === "p")? "Paper" :
                           (userinput === "r")? "Rock" :
                           (userinput === "s")? "Scissors": 
@@ -44,10 +45,8 @@
                           
         }
 
-        getHumanChoice() 
+       
 
-        console.log ("Computer: "+ computerchoice)
-        console.log ("Player: "+ humanchoice)
 
 
        // initialize player score
@@ -61,6 +60,10 @@
 
         // create a variable containing the computer choice
         let humanselection = getHumanChoice();
+
+
+        console.log ("Computer: "+ computerselection)
+        console.log ("Player: "+ humanselection)
        // the function evaluates if the human choice or the computer choice is the winner. 
        // if human choice is paper and computer choice is rock, human choice wins
        // if human choice is scissors and computer choice is paper, human choice wins
@@ -89,7 +92,7 @@
        }
 
         }
-        
+
        function checkinput (humanselection) {
         if (humanselection === "noinput") {
           alert ("Invalid Input") 
@@ -99,7 +102,12 @@
     
         
         checkinput( humanselection);
-      
+        
+    // the function to play the game must do the same thing each time
+    // ask the user to prompt input
+    // generate computer choice
+    // once the round is complete, repeat
+  
 
   
         
