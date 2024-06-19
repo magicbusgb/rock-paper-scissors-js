@@ -27,7 +27,6 @@
     
         }
     getComputerChoice()
-    console.log ("Computer: "+ computerchoice)
 
         // prompt the user to make a choice between rock paper scissors --> r /p /s
         let userinput = prompt("Game Instructions: Type r for Rock, p for Paper and s for Scissors");
@@ -38,15 +37,16 @@
         humanchoice = (userinput === "p")? "Paper" :
                           (userinput === "r")? "Rock" :
                           (userinput === "s")? "Scissors": 
-        // if the inserted value is not valid, throw alert
 
-                          alert ("Invalid Input");
+                          "noinput";
                           
                           return humanchoice
                           
         }
 
         getHumanChoice() 
+
+        console.log ("Computer: "+ computerchoice)
         console.log ("Player: "+ humanchoice)
 
 
@@ -67,7 +67,6 @@
        // if human choice is rock and computer choice is scissors, human choice wins
        // if human choice === computer choice, it's a draw
        // else, computer wins
-
        function playRound (humanselection, computerselection) {
        if (humanselection === "Paper" && computerselection === "Rock") {
          humanscore += 1;
@@ -89,10 +88,18 @@
          console.log ("You lose! Computer Score: " + computerscore)
        }
 
-
-    }
+        }
         
-        playRound( humanselection, computerselection)
+       function checkinput (humanselection) {
+        if (humanselection === "noinput") {
+          alert ("Invalid Input") 
+        } else playRound (humanselection, computerselection) 
+
+        }
+    
+        
+        checkinput( humanselection);
+      
 
   
         
