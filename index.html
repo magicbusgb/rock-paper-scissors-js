@@ -67,23 +67,30 @@
 
       console.log ("Computer: "+ computerselection)
       console.log ("Player: "+ humanselection)
+      alert ("Player: "+ humanselection + " Computer: "+ computerselection)
+
       if (humanselection === "Paper" && computerselection === "Rock") {
         humanscore += 1;
+        alert ("You win! Player Score: " + humanscore + " Computer Score: " + computerscore);
         console.log ("You win! Player Score: " + humanscore + " Computer Score: " + computerscore);
       } else if (humanselection === "Scissors" && computerselection === "Paper"){
         humanscore += 1;
+        alert ("You win! Player Score: " + humanscore + " Computer Score: " + computerscore);
         console.log ("You win! Player Score: " + humanscore + " Computer Score: " + computerscore);
 
       } else if (humanselection === "Rock" && computerselection === "Scissors"){
         humanscore += 1;
+        alert ("You win! Player Score: " + humanscore + " Computer Score: " + computerscore);
         console.log ("You win! Player Score: " + humanscore + " Computer Score: " + computerscore);
 
       } else if (humanselection === computerselection ){
-        
+        alert ("It's a draw! Player Score: " + humanscore + " Computer Score: " + computerscore);
+ 
         console.log ("It's a draw! Player Score: " + humanscore + " Computer Score: " + computerscore);
 
       } else {
         computerscore +=1;
+        alert ("You lose! Player Score: " + humanscore + " Computer Score: " + computerscore);
         console.log ("You lose! Player Score: " + humanscore + " Computer Score: " + computerscore)
       }
 
